@@ -1,0 +1,24 @@
+language: python
+python:
+    - "3.6.5"
+addons:
+  postgresql: "9.6"
+
+services:
+    - postgres
+
+# require travis to first install dependencies
+install:
+    - pip install -r requirements.txt
+
+before-script:
+    - psql -c "DROP DATABASE IF EXISTS tototetest;" -U postgres
+    - psql -c "CREATE DATABASE totoe;" -U postgres
+    - python manage.py makemigrations
+    - python manage.py migrate
+
+script:
+    - pytest --ds totoe.settings
+
+after_success:
+    - coveralls
