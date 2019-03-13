@@ -7,9 +7,8 @@ addons:
 services:
     - postgres
 
-# require travis to first install dependencies
 install:
-    - pip install -r requirements.txt
+    - pip  install -r requirements.txt
 
 before-script:
     - psql -c "DROP DATABASE IF EXISTS tototetest;" -U postgres
