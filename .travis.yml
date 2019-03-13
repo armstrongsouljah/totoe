@@ -17,7 +17,7 @@ before-script:
     - python manage.py migrate
 
 script:
-    - pytest --ds totoe.settings
+    - coverage run --omit="*tests*,*init*,*migrations*,*wsgi*,*settings*,*urls*" --source="totoe" manage.py test&&coverage report -m
 
 after_success:
     - coveralls

@@ -7,3 +7,17 @@ A platform that enables collaborative talent showcasing inform of video content 
 - Python 3
 - Django 2.1.x
 
+#### User model
+{
+    
+    'user': {
+        
+        'username': "johndoe",
+        
+        'email':"john@doe.com",
+        
+        'token':"dwdwdw"
+   
+    }
+
+}
