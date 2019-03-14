@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'whitenoise',
 
-    'videos',
+    'totoe.apps.authentication',
+    'totoe.apps.videos',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTH_USER_MODEL = "authentication.User"
 
 ROOT_URLCONF = 'totoe.urls'
 

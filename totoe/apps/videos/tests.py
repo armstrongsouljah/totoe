@@ -1,5 +1,5 @@
 from django.test import TestCase
-from videos.apps import VideosConfig
+from ..videos.apps import VideosConfig
 
 class TestVideos(TestCase):
 
